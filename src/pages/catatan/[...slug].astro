@@ -3,7 +3,7 @@ import RenderPost from '~/components/views/RenderPost.astro'
 import { getFilteredPosts } from '~/utils/data'
 
 export async function getStaticPaths() {
-  const posts = await getFilteredPosts('blog')
+  const posts = await getFilteredPosts('catatan')
 
   return posts.map((post) => ({
     params: { slug: post.id },

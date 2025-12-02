@@ -1,8 +1,8 @@
 ---
-title: Getting Started
-description: How to quickly build your personal website with Astro AntfuStyle Theme
-pubDate: 2024-10-04
-lastModDate: ''
+title: Menambahkan Berbagai Fitur AI ke Aplikasi Web
+description: Berikut adalah materi workshop "Menambahkan Berbagai Fitur AI ke Aplikasi Web"
+pubDate: 2025-12-02
+lastModDate: 2025-12-03
 ogImage: true
 toc: true
 share: true

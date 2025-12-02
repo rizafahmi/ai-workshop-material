@@ -99,7 +99,7 @@ interface BaseNavItem {
    * Specifies the navigation path. It must start with `/`.
    *
    * @example
-   * '/blog'、'/blog/'
+   * '/catatan'、'/catatan/'
    */
   path: Path
 

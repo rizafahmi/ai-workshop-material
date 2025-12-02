@@ -1,7 +1,7 @@
 ---
-title: Blog
-description: How to use the Astro AntfuStyle Theme
-subtitle: How to use the Astro AntfuStyle Theme
+title: Catatan
+description: Kumpulan catatan Riza
+subtitle: ''
 bgType: rose
 toc: false
 ogImage: true
@@ -22,6 +22,6 @@ import ListView from '~/components/views/ListView.astro'
     title={frontmatter.title}
     subtitle={frontmatter.subtitle}
   >
-    <ListView collectionType="blog" pageToc={frontmatter.toc} />
+    <ListView collectionType="catatan" pageToc={frontmatter.toc} />
   </StandardLayout>
 </BaseLayout>
