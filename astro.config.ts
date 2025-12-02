@@ -1,12 +1,13 @@
-import { defineConfig } from 'astro/config'
-import sitemap from '@astrojs/sitemap'
-import robotsTxt from 'astro-robots-txt'
-import unocss from 'unocss/astro'
-import astroExpressiveCode from 'astro-expressive-code'
-import mdx from '@astrojs/mdx'
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+import robotsTxt from "astro-robots-txt";
+import unocss from "unocss/astro";
+import astroExpressiveCode from "astro-expressive-code";
+import mdx from "@astrojs/mdx";
+import rehypeMermaid from "rehype-mermaid";
 
-import { remarkPlugins, rehypePlugins } from './plugins'
-import { SITE } from './src/config'
+import { remarkPlugins } from "./plugins";
+import { SITE } from "./src/config";
 
 // https://docs.astro.build/en/reference/configuration-reference/
 export default defineConfig({
@@ -20,23 +21,26 @@ export default defineConfig({
     mdx(),
   ],
   markdown: {
-    syntaxHighlight: false,
+    syntaxHighlight: {
+      type: "shiki",
+      excludeLangs: ["mermaid", "math"],
+    },
     remarkPlugins,
-    rehypePlugins,
+    rehypePlugins: [rehypeMermaid],
   },
   image: {
     domains: SITE.imageDomains,
     // https://docs.astro.build/en/guides/images/#responsive-image-behavior
     // Used for all local (except `/public`) and authorized remote images using `![]()` syntax; not configurable per-image
     // Used for all `<Image />` and `<Picture />` components unless overridden with `layout` prop
-    layout: 'constrained',
+    layout: "constrained",
     responsiveStyles: true,
   },
   vite: {
     server: {
       headers: {
         // Enable CORS for dev: allow Giscus iframe to load local styles
-        'Access-Control-Allow-Origin': '*',
+        "Access-Control-Allow-Origin": "*",
       },
     },
     build: { chunkSizeWarningLimit: 1200 },
@@ -49,4 +53,4 @@ export default defineConfig({
     chromeDevtoolsWorkspace: true,
     failOnPrerenderConflict: true,
   },
-})
+});
