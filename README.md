@@ -1,110 +1,60 @@
-# Astro AntfuStyle Theme
+# Workshop AI
 
-[![ci][ci-badge]][ci-link]
-[![version][version-badge]][version-link]
-[![live demo][demo-badge]][demo-link]
-[![chat][chat-badge]][chat-link]
+Material for AI Workshop DevFest GDG Jogja 2025
 
-![cover image](https://raw.githubusercontent.com/lin-stephanie/assets/refs/heads/main/astro-antfustyle-theme/cover_2x.png)
+### Tentang Workshop
 
-AntfuStyle is a flexible and feature-rich [Astro 5](https://astro.build/) theme for developers and creators, inspired by the minimalist style of [antfu.me](https://antfu.me/). I like this design and have recreated and expanded its functionality.
+Berawal dari keresahan dan kesulitan saya dalam mencari contoh kasus penerapan AI yang bukan chatbot, lalu saya coba buat thread tweet ini.
 
-## Features
+<blockquote class="twitter-tweet"><p lang="in" dir="ltr">Ingin mengumpulkan skenario penerapan AI/LLM di produk/aplikasi. Bisa buat produk beneran atau bisa buat demo aplikasi untuk workshop/tutorial. Tujuannya biar ngga monoton chatbot melulu. Kalau ada ide atau pernah lihat skenario menarik penggunaan AI boleh yuk dibagikan ✌🏼</p>&mdash; youtube.com/rizafahmi (@rizafahmi22) <a href="https://twitter.com/rizafahmi22/status/1948654262013071819?ref_src=twsrc%5Etfw">July 25, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-**Optimized Infrastructure**
+### Objektif
 
-- Zero UI Framework
-- SEO-Friendly
-- Auto-Generated RSS Feed
-- Dynamic OG Image Generation
-- Subpath Deployment Support
-- Optimized and Responsive Images
-- VS Code Snippets for Fast Coding
-- Well-Structured Project
-- High Lighthouse Performance
+Tujuan workshop ini adalah untuk melihat berbagai skenario penerapan AI/LLM di produk/aplikasi baru atau yang sudah ada sebelumnya. Agar tidak melulu membangun chatbot.
 
-**Content Management**
+### Logistik
 
-- Markdown & MDX Support
-- Math Equations Rendering
-- Callouts (Alerts/Admonitions)
-- Code Syntax Highlighting & Annotations
-- Ready-To-Use Remark Directives
-- Customizable Layouts, Views, and Navigation
-- Configurable Animated Backgrounds ([Preview](#preview))
-- Showcase Your GitHub Releases and PRs
-- Highlight Your Creative Work or Curated Posts
-- Share Your Short Notes or Quick Thoughts
-- Create Your Personal Gallery
+Untuk mengikuti workshop ini diharapkan teman-teman sudah memiliki:
 
-**User Experience**
+- Web browser: Google Chrome versi 127 atau yang lebih baru
+- Code editor: VS Code, Cursor, Zed, VIM, Emacs, apapun
+- Dapat menjalankan SQLite versi 3
+- Version control GIT dan akun GitHub
+- Akun Google untuk mengakses AI melalui AIStudio
 
-- Responsive Layout
-- Full-Platform TOC Support
-- Light & Dark Modes Toggle
-- Smooth View Transitions
-- Loading Progress Indicator
-- Search Functionality
-- Image Zoom Preview
-- Social Media Sharing
-- Integrated Giscus Comments
-- Accessibility Enhancements
-- Keyboard-Friendly
+### Pengetahuan yang Diperlukan
 
-> [More features](https://github.com/users/lin-stephanie/projects/4) are continuously being added! 🚀
+- Dasar JavaScript/TypeScript
+- Pemahaman REST API
+- Konsep async/await
 
-## Docs
+#### Aplikasi
 
-The [live demo][demo-link] serves as self-documentation, detailing how to configure and use the theme, along with other relevant knowledge expansion. Explore [posts](https://astro-antfustyle-theme.vercel.app/blog/) on the demo site or view [Markdown files](https://github.com/lin-stephanie/astro-antfustyle-theme/tree/main/src/content/blog) in the repository. Quick Navigation:
+Kita akan menggunakan aplikasi Workspresso sebagai aplikasi yang akan kita kembangkan fitur-fitur AI. Dari aplikasi ini, kira-kira fitur AI apa yang bisa kita kembangkan?
 
-- [Getting Started](https://astro-antfustyle-theme.vercel.app/blog/getting-started/)
-- [Project Structure](https://astro-antfustyle-theme.vercel.app/blog/project-structure/)
-- [Configuration](https://astro-antfustyle-theme.vercel.app/blog/basic-configuration/)
-- [Authoring Content](https://astro-antfustyle-theme.vercel.app/blog/getting-started/#authoring-content)
-- [Sync Updates](https://astro-antfustyle-theme.vercel.app/blog/sync-updates/)
-- [Explore More](https://astro-antfustyle-theme.vercel.app/blog/getting-started/#next-steps)
+##### Halaman Utama
 
-If you're eager to deploy your own version right away:
+![index](./src/assets/images/ai-workshop/index.png)
 
-[![Deploy with Netlify](https://raw.githubusercontent.com/lin-stephanie/assets/refs/heads/main/astro-antfustyle-theme/deploy_netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/lin-stephanie/astro-antfustyle-theme) [![Deploy with Vercel](https://raw.githubusercontent.com/lin-stephanie/assets/refs/heads/main/astro-antfustyle-theme/deploy_vercel.svg)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flin-stephanie%2Fastro-antfustyle-theme&project-name=astro-antfustyle-theme)
+##### Halaman Detail
 
-## Preview
+![detail](./src/assets/images/ai-workshop/detail.png)
 
-![plum](https://raw.githubusercontent.com/lin-stephanie/assets/refs/heads/main/astro-antfustyle-theme/blog_2x.png)
+##### Komentar
 
-![rose](https://raw.githubusercontent.com/lin-stephanie/assets/refs/heads/main/astro-antfustyle-theme/post_2x.png)
+![comment](./src/assets/images/ai-workshop/comment.png)
 
-![dot](https://raw.githubusercontent.com/lin-stephanie/assets/refs/heads/main/astro-antfustyle-theme/projects_2x.png)
+##### Data Baru
 
-![particle](https://raw.githubusercontent.com/lin-stephanie/assets/refs/heads/main/astro-antfustyle-theme/streams_2x.png)
+![formNew](./src/assets/images/ai-workshop/new.png)
 
-## Credits
+## Persiapan Proyek
 
-Thanks to the following projects for inspiration and references:
+Clone repo berikut lalu masuk ke folder tersebut kemudian jalankan `npm install` dan setelah selesai jalankan `npm run dev`.
 
-- [antfu/antfu.me](https://github.com/antfu/antfu.me)
-- [satnaing/astro-paper](https://github.com/satnaing/astro-paper)
-- [chrismwilliams/astro-theme-cactus](https://github.com/chrismwilliams/astro-theme-cactus)
-- [saicaca/fuwari](https://github.com/saicaca/fuwari)
-
-## Contribution
-
-If you see any errors or room for improvement, feel free to open an [issue](https://github.com/lin-stephanie/astro-antfustyle-theme/issues) or [pull request](https://github.com/lin-stephanie/astro-antfustyle-theme/pulls). Thank you in advance for contributing! ❤️
-
-## License
-
-[MIT](https://github.com/lin-stephanie/astro-antfustyle-theme/blob/main/LICENSE) © 2024-PRESENT [Stephanie Lin](https://github.com/lin-stephanie)
-
-<!-- Badges -->
-
-[ci-badge]: https://img.shields.io/github/actions/workflow/status/lin-stephanie/astro-antfustyle-theme/ci.yml?label=CI&style=flat&colorA=080f12&colorB=f87171
-[ci-link]: https://github.com/lin-stephanie/astro-antfustyle-theme/actions/workflows/ci.yml
-
-[version-badge]: https://img.shields.io/github/v/release/lin-stephanie/astro-antfustyle-theme?label=Release&style=flat&colorA=080f12&colorB=f87171
-[version-link]: https://github.com/lin-stephanie/astro-antfustyle-theme/releases
-
-[demo-badge]: https://img.shields.io/badge/Live%20Demo-080f12?style=flat&colorA=080f12&colorB=f87171&logo=vercel&logoSize=10
-[demo-link]:https://astro-antfustyle-theme.vercel.app/
-
-[chat-badge]: https://img.shields.io/badge/Discussions-080f12?style=flat&colorA=080f12&colorB=f87171&logo=github
-[chat-link]: https://github.com/lin-stephanie/astro-antfustyle-theme/discussions
+```bash
+git clone https://github.com/rizafahmi/workspresso.git
+cd workspresso
+npm install
+npm run dev
+```
