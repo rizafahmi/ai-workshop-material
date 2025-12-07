@@ -12,7 +12,6 @@ search: true
 
 import { Tweet } from 'astro-embed'
 import { Image } from 'astro:assets'
-
 import index from '../../assets/images/ai-workshop/index.png'
 import detail from '../../assets/images/ai-workshop/detail.png'
 import comment from '../../assets/images/ai-workshop/comment.png'
@@ -90,7 +89,7 @@ npm run dev
 
 Ada dua cara mengakses Gemini LLM: melalui aistudio atau vertex gcp. Untuk kemudahan akses dan ujicoba lebih mudah menggunakan aistudio. Namun jika ingin membangun aplikasi yang siap dijalankan di level production, disarankan menggunakan vertex.
 
-Untuk mulai menggunakan silakan login dengan akun GCP terlebih dahulu ke [https://aistudio.google.com/](https://aistudio.google.com/) lalu menuju ke [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) atau pilih menu "Get API Key" untuk membuat API Key baru yang akan kita gunakan di kode nantinya.
+Untuk mulai menggunakan silakan login dengan akun Google terlebih dahulu ke [https://aistudio.google.com/](https://aistudio.google.com/) lalu menuju ke [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) atau pilih menu "Get API Key" untuk membuat API Key baru yang akan kita gunakan di kode nantinya.
 
 Lalu pilih "Create API Key" dan pilih proyek dari GCP sebelumnya. Dan salin API Key untuk nantinya akan dimasukkan kedalam *environment variable* atau file `.env`
 
@@ -634,7 +633,7 @@ export async function generateTags(text: string) {
 
 ### 5. Summarization
 
-Untuk setiap komentar baru yang masuk, akan dirangkum untuk memudah kan pengguna memahami komentar.
+Untuk setiap komentar baru yang masuk, akan dirangkum untuk memudahkan pengguna memahami komentar.
 
 #### `api/comments.ts`
 
@@ -1051,6 +1050,53 @@ await evalMiniLM()
 
 ## AI di Lapisan Performa
 
-TODO: Menggunakan MCP Chrome DevTools dengan Gemini CLI
+Chrome DevTools sekarang menyediakan akses melalui MCP sehingga kita dapat bertanya atau meminta DevTools untuk cek error, perbaikan performa dan banyak lagi.
+
+### Konfigurasi
+
+Tambahkan konfigurasi berikut di coding agent masing-masing. Misalnya menggunakan Gemini CLI, dapat ditambahkan ke file `settings.json`.
+
+#### `~/.gemini/settings.json`
+
+```json
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--channel=canary"
+      ]
+    }
+  },
+  {...}
+}
+```
+
+Lalu jalankan gemini-cli untuk memastikan MCP sudah terhubung.
+
+```
+
+ ███            █████████  ██████████ ██████   ██████ █████ ██████   █████ █████
+░░░███         ███░░░░░███░░███░░░░░█░░██████ ██████ ░░███ ░░██████ ░░███ ░░███
+  ░░░███      ███     ░░░  ░███  █ ░  ░███░█████░███  ░███  ░███░███ ░███  ░███
+    ░░░███   ░███          ░██████    ░███░░███ ░███  ░███  ░███░░███░███  ░███
+     ███░    ░███    █████ ░███░░█    ░███ ░░░  ░███  ░███  ░███ ░░██████  ░███
+   ███░      ░░███  ░░███  ░███ ░   █ ░███      ░███  ░███  ░███  ░░█████  ░███
+ ███░         ░░█████████  ██████████ █████     █████ █████ █████  ░░█████ █████
+░░░            ░░░░░░░░░  ░░░░░░░░░░ ░░░░░     ░░░░░ ░░░░░ ░░░░░    ░░░░░ ░░░░░
+
+Tips for getting started:
+1. Ask questions, edit files, or run commands.
+2. Be specific for the best results.
+3. /help for more information.
+
+ Using: 1 GEMINI.md file | 1 MCP server
+╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ >   Type your message or @path/to/file                                                                                       │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+Contoh prompt: `Is there any performance suggestion to make localhost:4321 faster?`
 
 ## Penutup
