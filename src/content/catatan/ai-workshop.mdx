@@ -1074,7 +1074,7 @@ Tambahkan konfigurasi berikut di coding agent masing-masing. Misalnya menggunaka
 }
 ```
 
-Lalu jalankan gemini-cli untuk memastikan MCP sudah terhubung.
+Lalu jalankan gemini-cli di folder proyek tersebut. Dan apabila belum, bisa mulai menjalankan perintah `/init` di gemini-cli.
 
 ```
 
@@ -1096,6 +1096,48 @@ Tips for getting started:
 ╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 │ >   Type your message or @path/to/file                                                                                       │
 ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+Untuk memastikan MCP sudah terhubung, jalankan perintah `/mcp list` dan pastikan pesan akan muncul kurang lebih seperti teks dibawan ini.
+
+```text
+> /mcp list
+
+Configured MCP servers:
+
+🟢 chrome-devtools - Ready (26 tools)
+  Tools:
+  - click
+  - close_page
+  - drag
+  - emulate
+  - evaluate_script
+  - fill
+  - fill_form
+  - get_console_message
+  - get_network_request
+  - handle_dialog
+  - hover
+  - list_console_messages
+  - list_network_requests
+  - list_pages
+  - navigate_page
+  - new_page
+  - performance_analyze_insight
+  - performance_start_trace
+  - performance_stop_trace
+  - press_key
+  - resize_page
+  - select_page
+  - take_screenshot
+  - take_snapshot
+  - upload_file
+  - wait_for
+
+
+ Using:
+   - 1 GEMINI.md file
+   - 1 MCP server
 ```
 
 Contoh prompt: `Is there any performance suggestion to make localhost:4321 faster?`
