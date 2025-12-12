@@ -1143,3 +1143,38 @@ Configured MCP servers:
 Contoh prompt: `Is there any performance suggestion to make localhost:4321 faster?`
 
 ## Penutup
+
+Workshop kali ini menunjukkan bahwa AI bisa diterapkan di berbagai aspek aplikasi web—bukan hanya chatbot—mulai dari mempermudah input pengguna, meningkatkan pencarian, menganalisis konten, hingga membantu pengujian dan debugging.
+
+Kita sudah membahas **8 fitur AI** yang dibagi dalam beberapa kategori:
+
+### AI di Antarmuka Aplikasi
+
+1.  **Smart Paste** - Mengekstrak data tidak terstruktur dari clipboard pengguna menjadi data terstruktur yang otomatis mengisi form. Menggunakan Gemini API dengan JSON schema untuk output yang konsisten.
+
+2.  **Pencarian Semantik** - Meningkatkan pencarian dari exact-match menjadi pencarian berdasarkan kemiripan makna. Dibahas dua pendekatan:
+    - Algoritma BM25 (tradisional, ringan)
+    - Model embedding dari HuggingFace (lebih akurat)
+
+### AI di Logika Aplikasi
+
+3.  **Analisa Sentimen** - Menggunakan **Gemini Nano** yang berjalan langsung di browser Chrome. Hemat biaya dan menjaga privasi karena tidak perlu mengirim data ke server.
+
+4.  **Klasifikasi Teks** - Otomasi pengisian tags berdasarkan deskripsi venue menggunakan model klasifikasi.
+
+5.  **Summarization** - Merangkum komentar-komentar pengguna secara otomatis untuk membantu pemilik venue memahami feedback pelanggan dengan cepat.
+
+6.  **Image Classification** - Memvalidasi foto yang diupload pengguna agar hanya menerima foto makanan, minuman, dan menu saja.
+
+7.  **RAG (Retrieval-Augmented Generation)** - Implementasi sederhana RAG untuk membandingkan dua venue:
+    - **Retrieval**: Ambil data dari database
+    - **Augmented**: Masukkan data ke prompt
+    - **Generation**: Hasilkan perbandingan
+
+#### AI di Pengujian
+
+8.  **Evaluasi Model** - Cara mengevaluasi dan membandingkan berbagai model embedding (BM25, bge-micro, MiniLM) untuk menemukan yang paling cocok dengan kebutuhan aplikasi.
+
+#### AI di Lapisan Performa
+
+Workshop juga membahas penggunaan **Chrome DevTools MCP** yang terintegrasi dengan Gemini CLI untuk debugging dan optimasi performa.
